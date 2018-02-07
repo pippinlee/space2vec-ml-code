@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 from keras.layers import Input, Dense, TimeDistributed, LSTM, Dropout, Activation
 from keras.layers import Convolution2D, MaxPooling2D, Flatten
 from sklearn.model_selection import StratifiedShuffleSplit
@@ -37,18 +31,11 @@ pd.set_option("max_columns", 999)
 
 np.random.seed(1)
 
-get_ipython().magic(u'matplotlib inline')
-
-
-# In[2]:
-
-
 # Load engineered data from pickle
 data = pickle.load(open('/home/ubuntu/transients-data-processing/data/engineered-data.pkl', 'rb'))
 
 
-# In[3]:
-
+# Define features into groupings based on data type
 
 targets = [
     "OBJECT_TYPE",
@@ -57,6 +44,8 @@ targets = [
 ids = [
     "ID",
 ]
+
+# continuous = [c for c in columns if c not in (special + categorical + ordinal + booleans)]
 
 continuous = [
     "AMP",
@@ -108,11 +97,6 @@ booleans = [
     "MAGLIM",
 ]
 
-# continuous = [c for c in columns if c not in (special + categorical + ordinal + booleans)]
-
-
-# In[4]:
-
 
 # One-hot encode categorical
 data = pd.get_dummies(
@@ -126,33 +110,24 @@ data = pd.get_dummies(
 )
 
 
-# In[5]:
-
-
+# Set target and inputs
 target = data[targets]
 inputs = data.drop(columns=ids+targets)
-
-
-# In[6]:
 
 
 # Shuffle and split the data
 X_train, X_test, y_train, y_test = train_test_split(inputs, target, test_size=0.2, random_state=42, stratify=target.as_matrix())
 
 
-# In[7]:
-
-
+# Set shape of matrix
 train_x, train_y, valid_x, valid_y = X_train.as_matrix(), y_train.as_matrix(), X_test.as_matrix(), y_test.as_matrix()
 
-# save dmatrices
+# Save dmatrices
 xgtrain = xgb.DMatrix(train_x, label=train_y, feature_names=X_train.columns)
 xgvalid = xgb.DMatrix(valid_x, label=valid_y, feature_names=X_test.columns)
 
 
-# In[31]:
-
-
+# Set parameters for model
 param = {
     'max_depth': 6,
     'learning_rate': 0.1,
@@ -192,9 +167,6 @@ bst. train_x, train_y), (valid_x, valid_y)],
 # bst.save_model('xgb_' + str(2018) + '_v1.model')
 
 
-# In[54]:
-
-
 # ytrue = xgvalid.get_label()
 ytrue = valid_y
 
@@ -204,14 +176,7 @@ ytrue = valid_y
 
 ypred = bst.predict_proba(valid_x)[:, 1:]
 
-
-# In[36]:
-
-
 a = bst.predict_proba(valid_x)
-
-
-# In[49]:
 
 
 print(ytrue.shape)
