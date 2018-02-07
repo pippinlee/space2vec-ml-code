@@ -10,4 +10,4 @@ You can find the feature engineered CSV from the autoscan project (under the "Fe
 ## Posts
 
 ### Week 2: building a baseline model
-See /building-a-baseline-model for code
+See [/building-baseline-model](https://github.com/pippinlee/space2vec-ml-code/tree/master/building-baseline-model) for code
