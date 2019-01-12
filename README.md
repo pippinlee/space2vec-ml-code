@@ -27,4 +27,4 @@ We pickled the feature engineered data for our above model, you can find the dat
 
 
 
-###### Maintained by Pippin Lee (pl@deeplearni.ng) and Cole Clifford (cc@deeplearni.ng)
+###### Maintained by Pippin Lee (p.lee@dessa.com) and Cole Clifford (c.clifford@dessa.com)
