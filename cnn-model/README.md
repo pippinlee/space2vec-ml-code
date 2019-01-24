@@ -28,3 +28,9 @@ However, there are 3 different sizes of each with the links below:
 | extra_small_normalized_image_object_data_in_numpy_format.pkl | https://s3.amazonaws.com/space2vec-public/post3/extra_small_normalized_image_object_data_in_numpy_format.pkl | 744.2MB   |
 
 You can pick any of the links from that table and use `wget <link>` to download the data.
+
+## License
+
+`space2vec-ml-code` is available under the MIT license. See the LICENSE file for more info.
+
+Copyright 2018 Pippin Lee, Jinnah Ali-Clarke, Cole Clifford.
