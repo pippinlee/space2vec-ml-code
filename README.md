@@ -1,6 +1,6 @@
 ## space2vec: Model Code
 
-Check our the posts here: [space2vec.com](http://space2vec.com)
+Check our the posts here: [space2vec](https://pippinlee.github.io/space2vec-website/)
 
 The project behind the code is talked about in detail throughout the blog posts. But this
 is where the cool code stuff happens!
