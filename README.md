@@ -20,7 +20,7 @@ library in the requirements.txt and run again.
 ## Posts
 
 ### Week 2: building a baseline model
-See [/xgboost-baseline](https://github.com/pippinlee/space2vec-ml-code/tree/master/building-baseline-model) for code
+See [/xgboost-baseline](https://github.com/pippinlee/space2vec-ml-code/tree/master/xgboost-baseline) for code
 
 We pickled the feature engineered data for our above model, you can find the data here: 
 [https://drive.google.com/open?id=1Pa4-imVbK7yfZuCX3mfF-mMae1eyhQqo](https://drive.google.com/open?id=1Pa4-imVbK7yfZuCX3mfF-mMae1eyhQqo)
